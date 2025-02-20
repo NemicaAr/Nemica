@@ -5,7 +5,7 @@ import "../index.css";
 import Card from "./Card";
 
 //import Cards
-import bio1A from "../assets/images/cards/bio1A.jpg";
+import bio1A from "../assets/images/cards/Bio1A.jpg";
 import histograma1A from "../assets/images/cards/histograma1A.webp";
 import clip2 from "../assets/images/cards/Clip2.webp";
 import genealogia1A from "../assets/images/cards/Genealogia1A.webp";
