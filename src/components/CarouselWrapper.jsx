@@ -42,8 +42,8 @@ const CarouselWrapper = () => {
   );
 
   return (
-    <div className="wrapper">
-      <div className="scene">
+    <div className="wrapper overflow-x-hidden">
+      <div className="scene ">
         <div className="carousel keen-slider" ref={sliderRef}>
           <div className="carousel__cell number-slide6">
             <Card
