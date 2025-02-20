@@ -75,7 +75,7 @@ export default function App() {
           className="absolute w-full h-full object-cover scale-[1.5] translate-y-[-15%] md:scale-100 md:translate-y-0"
         />
         <div
-          className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20 | lg:text-8xl lg:left-260 lg:top-45 lg:text-gris lg:drop-shadow-none"
+          className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20 | lg:text-8xl lg:left-330 lg:top-45 lg:text-gris lg:drop-shadow-none"
           style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
         >
           <span className="block md:inline ">DEJÁ</span>
@@ -178,12 +178,12 @@ export default function App() {
         </div>
       </div>
 
-      <div className="font-bold text-2xl bg-lila p-5 border-lila text-white">
+      <div className="font-bold text-2xl bg-lila pb-15 border-lila text-white">
         <Line imgSrc={logo} description="NO OLVIDES TUS RAÍCES" />
       </div>
 
-      <div className="w-screen h-screen">
-        <CarouselWrapper/>
+      <div className="w-full h-[540px] bg-gradient-to-b from-lila to-gris">
+        <CarouselWrapper />
       </div>
 
       <div className="bg-gris text-white text-2xl p-5 font-bold lg:pt-20">
@@ -283,7 +283,7 @@ export default function App() {
           BackgroundWithIcons
           bgDesktopIcon={bgDesktopIcon}
           bgMobileIcon={bgMobileIcon}
-          icons={[one, two, three, four, five, six, seven, eight]}
+          icons={[one, two, three, four, five, six, seven, eight, one, two ,three]}
         />
       </div>
 

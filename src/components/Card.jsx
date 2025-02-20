@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function Card({ title, imgSrc, description, h1 }) {
   return (
-    <div className="flex flex-col w-[300px] h-[500px] bg-white rounded-b-sm shadow-lg overflow-hidden border-2 border-white ">
+    <div className="flex flex-col w-[300px] h-[500px] bg-gray-100 rounded-b-sm shadow-lg overflow-hidden border-2 border-white ">
       <div className="relative h-[250px]">
         <img
           src={imgSrc}

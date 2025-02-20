@@ -12,7 +12,7 @@ export default function BackgroundWithIcons({ bgDesktopIcon, bgMobileIcon, icons
         </picture>
   
         {/* Contenedor de iconos alineados horizontalmente */}
-        <div className="absolute -left-10 lg:-left-20 flex gap-4 lg:gap-20 z-10 overflow-hidden">
+        <div className="absolute -left-48 lg:-left-56 flex gap-4 lg:gap-20 z-10 overflow-hidden">
           {icons.map((icon, index) => (
             <img key={index} src={icon} alt={`Icono ${index}`} className="w-25 h-25 lg:w-40 lg:h-40" />
           ))}
