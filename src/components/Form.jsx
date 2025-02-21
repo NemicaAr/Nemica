@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -39,8 +40,58 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes procesar los datos del formulario, como enviarlos a un servidor
-    console.log(formData);
+
+    // Crea un objeto con los parámetros que espera tu plantilla en EmailJS
+    const templateParams = {
+      nombre: formData.nombre,
+      apellido: formData.apellido,
+      email: formData.email,
+      telefono: formData.telefono,
+      arbolGenealogico: formData.opciones.arbolGenealogico ? "Sí" : "No",
+      testimonios: formData.opciones.testimonios ? "Sí" : "No",
+      circuloRelaciones: formData.opciones.circuloRelaciones ? "Sí" : "No",
+      resumenBiografico: formData.opciones.resumenBiografico ? "Sí" : "No",
+      lineaDeTiempo: formData.opciones.lineaDeTiempo ? "Sí" : "No",
+      videoclip: formData.opciones.videoclip ? "Sí" : "No",
+      museum: formData.opciones.museum ? "Sí" : "No",
+      sintesisGenetica: formData.opciones.sintesisGenetica ? "Sí" : "No",
+      todos: formData.opciones.todos ? "Sí" : "No",
+    };
+
+    // Envía el correo utilizando EmailJS
+    emailjs
+      .send(
+        "service_yx3bqlm",    //  Service ID
+        "template_v05pzeb",   //  Template ID
+        templateParams,
+        "Orh5Q3QvZs364SHkL"     // Public Key
+      )
+      .then(
+        (result) => {
+          console.log("Correo enviado con éxito:", result.text);
+          // Opcional: reinicia el formulario
+          setFormData({
+            nombre: "",
+            apellido: "",
+            email: "",
+            telefono: "",
+            opciones: {
+              arbolGenealogico: false,
+              testimonios: false,
+              circuloRelaciones: false,
+              resumenBiografico: false,
+              lineaDeTiempo: false,
+              videoclip: false,
+              museum: false,
+              sintesisGenetica: false,
+              todos: false,
+            },
+          });
+        },
+        (error) => {
+          console.error("Error al enviar correo:", error.text);
+        }
+      );
   };
 
   return (
@@ -52,14 +103,10 @@ export default function Form() {
         Envíanos tus datos para que nos pongamos en contacto
       </p>
       <form onSubmit={handleSubmit}>
-        {" "}
         {/* Nuevo grid para los inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 lg:text-2xl">
           <div className="w-full">
-            <label
-              htmlFor="nombre"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="nombre" className="block text-sm font-medium text-left">
               Nombre
             </label>
             <input
@@ -75,10 +122,7 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="apellido"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="apellido" className="block text-sm font-medium text-left">
               Apellido
             </label>
             <input
@@ -94,10 +138,7 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-left">
               Email
             </label>
             <input
@@ -113,10 +154,7 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="telefono"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="telefono" className="block text-sm font-medium text-left">
               Teléfono celular
             </label>
             <input
@@ -131,9 +169,10 @@ export default function Form() {
             />
           </div>
         </div>
+
         <div className="bg-grisClaro text-left rounded-lg mx-auto ">
           <p className="text-lg font-semibold text-purpura mb-4 lg:text-left lg:w-2xl lg:text-2xl lg:right-2 py-8">
-            Elegi los formatos que más te interesen o el legado completo:
+            Elegí los formatos que más te interesen o el legado completo:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:text-2xl ">
             <label className="flex items-center gap-2 text-purpura">
@@ -213,7 +252,7 @@ export default function Form() {
               Museum
             </label>
 
-            <label className="flex items-center gap-3 text-purpura lg:py-2 ">
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
                 name="sintesisGenetica"

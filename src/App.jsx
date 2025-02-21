@@ -182,7 +182,7 @@ export default function App() {
         <Line imgSrc={logo} description="NO OLVIDES TUS RAÍCES" />
       </div>
 
-      <div className="w-full h-[540px] bg-gradient-to-b from-lila to-gris">
+      <div className="w-full h-[540px] bg-gradient-to-b from-lila to-gris" id= "servicios">
         <CarouselWrapper />
       </div>
 

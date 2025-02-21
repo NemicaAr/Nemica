@@ -8,7 +8,7 @@ export default function Footer() {
 
       <div className="flex justify-center gap-6">
         <a
-          href="https://www.instagram.com/tu_empresa"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition"
@@ -17,7 +17,7 @@ export default function Footer() {
         </a>
         <h2 className="font-bold text-2xl text-center">|</h2>
         <a
-          href="https://www.linkedin.com/company/tu_empresa"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition"

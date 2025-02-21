@@ -19,11 +19,6 @@ const NavBar = ({ imgSrc, title }) => {
           <img src={title} alt="Logo" className="h-8" />
         </div>
       </section>
-      <div className="lg:hidden">
-        <button onClick={toggleMenu} className="text-3xl">
-          &#9776;
-        </button>
-      </div>
       <ul
         className={`lg:flex space-x-4 ${isMenuOpen ? "block" : "hidden"} lg:block`}
       >
