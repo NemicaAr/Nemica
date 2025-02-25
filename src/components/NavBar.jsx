@@ -20,7 +20,7 @@ const NavBar = ({ imgSrc, title }) => {
         </div>
       </section>
       <ul
-        className={`lg:flex space-x-4 ${isMenuOpen ? "block" : "hidden"} lg:block`}
+        className={` mr-9 lg:flex space-x-6 ${isMenuOpen ? "block" : "hidden"} lg:block`}
       >
         <li>
           <a href="#servicios" className="hover:text-gray-500 font-bold">Servicios</a>

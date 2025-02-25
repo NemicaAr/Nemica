@@ -96,12 +96,9 @@ export default function Form() {
 
   return (
     <div className="form-container bg-grisClaro lg:mx-30 lg:my-15 p-5 text-purpura lg:px-60 lg:rounded-xl">
-      <h1 className="text-4xl font-bold lg:text-4xl lg:text-left lg:py-3 py-2">
-        Formulario de Contacto
+      <h1 className="text-3xl font-bold lg:text-4xl lg:text-left lg:py-3 py-2">
+       Envíanos tus datos para que nos pongamos en contacto
       </h1>
-      <p className="font-base text-2xl lg:text-2xl lg:text-left text-left px-5 lg:px-0">
-        Envíanos tus datos para que nos pongamos en contacto
-      </p>
       <form onSubmit={handleSubmit}>
         {/* Nuevo grid para los inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 lg:text-2xl">

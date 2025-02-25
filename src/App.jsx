@@ -46,15 +46,6 @@ import six from "./assets/images/icons/6.png";
 import seven from "./assets/images/icons/7.png";
 import eight from "./assets/images/icons/8.png";
 
-//import Card
-//import bio1A from "./assets/images/cards/Bio1A.jpg";
-//import histograma1A from "./assets/images/cards/histograma1A.webp";
-//import clip2 from "./assets/images/cards/Clip2.webp";
-//import genealogia1A from "./assets/images/cards/Genealogia1A.webp";
-//import testimonios from "./assets/images/cards/Testimonios.webp";
-//import relaciones from "./assets/images/cards/Relaciones.webp";
-//import genetica1A from "./assets/images/cards/genetica1A.webp";
-//import Museum1B from "./assets/images/cards/Museum1B.webp";
 
 export default function App() {
   return (
@@ -101,7 +92,7 @@ export default function App() {
           }
         />
       </div>
-      <div className="font-bold text-2xl pb-8 | lg:text-3xl lg:pb-10 bg-crema">
+      <div className="font-sans font-bold text-xl pb-8 | lg:text-2xl lg:pb-10 bg-crema">
         <Line imgSrc={logo} description="EL LEGADO IMBORRABLE" />
       </div>
 
@@ -178,7 +169,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="font-bold text-2xl bg-lila pb-15 border-lila text-white">
+      <div className="font-bold font-sans text-xl bg-lila pb-15 border-lila text-white | lg:text-2xl">
         <Line imgSrc={logo} description="NO OLVIDES TUS RAÍCES" />
       </div>
 
@@ -221,12 +212,12 @@ export default function App() {
         </div>
       </div>
 
-      <div className="bg-gris text-beige text-xl p-5 font-medium pb-10 | lg:text-xl text-center">
+      <div className="bg-gris font-bold text-white text-xl p-5 pb-10 | lg:text-2xl text-center">
         <Line imgSrc={logo} description="LA EXPERIENCIA INOLVIDABLE" />
       </div>
 
       <section className="hidden lg:block">
-        <h1 className="text-center bg-gris text-beige text-3xl p-10 font-medium font-serif">
+        <h1 className="text-center bg-gris text-white text-3xl p-10 font-medium font-serif">
           “A todo lo que queremos recordar uno debe adjudicarle una imagen”
           Matteo Ricci (1596).
         </h1>
@@ -236,10 +227,10 @@ export default function App() {
         <Hero imgSrcMobile={Nemicamobile} imgSrcDesktop={Nemicadesktop} />
 
         {/* Header para Desktop: se muestra solo en md y superiores */}
-        <div className="hidden md:block absolute top-25 right-25 lg:w-[800px] w-full p-4 bg-crema/75 bg lg:p-9 ">
+        <div className="hidden md:block absolute md:top-[10px] md:right-[25px] md:w-[400px] | lg:top-[80px] lg:right-[110px] lg:w-[800px] p-4 bg-crema/75 lg:p-10 ">
           <Header
             heading={
-              <div className="text-2xl font-normal font-sans text-left p-3 text-purpura">
+              <div className="text-2xl font-normal font-sans text-left p-3 md:text-xl text-purpura">
                 Las huellas mnémicas son los rastros que quedan en el cerebro
                 como resultado del almacenamiento de la información. Estas
                 huellas se forman a través de las experiencias y son esenciales
@@ -247,7 +238,7 @@ export default function App() {
               </div>
             }
             description={
-              <div className="text-2xl font-normal font-sans text-left p-3 text-purpura">
+              <div className="text-2xl font-normal font-sans text-left p-3 md:text-xl text-purpura">
                 En NEMICA, realizamos un proceso que emula la función de las
                 células mnémicas que permiten la reconstrucción y recuperación
                 de los recuerdos para preservar la memoria.
@@ -289,8 +280,8 @@ export default function App() {
 
       <div className="relative overflow-hidden ">
         <section
-          className="hidden lg:block absolute text-xl text-beige font-bold 
-                    left-1/2 bottom-8 transform -translate-x-1/2"
+          className="hidden lg:block absolute text-xl lg:text-2xl text-beige font-bold 
+                    left-1/2 bottom-8 transform -translate-x-1/2 "
         >
           <Line imgSrc={logo} description="VIVIR ES TRASCENDER" />
         </section>
