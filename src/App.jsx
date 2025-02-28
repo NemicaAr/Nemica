@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 //importacion de componentes
 import NavBar from "./components/NavBar";
@@ -48,29 +48,28 @@ import six from "./assets/images/icons/6.png";
 import seven from "./assets/images/icons/7.png";
 import eight from "./assets/images/icons/8.png";
 
-
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       // Añadir verificación de entorno de ejecución
-      if (typeof window === 'undefined') return;
-      
+      if (typeof window === "undefined") return;
+
       // Agregar debounce para mejor rendimiento
       const scrollCheck = setTimeout(() => {
-        console.log('Posición actual del scroll:', window.scrollY);
+        console.log("Posición actual del scroll:", window.scrollY);
         setIsScrolled(window.scrollY > 50);
       }, 100);
-  
+
       return () => clearTimeout(scrollCheck);
     };
-  
+
     // Ejecutar inmediatamente al montar
     handleScroll();
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -82,24 +81,21 @@ export default function App() {
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div className="absolute w-[500px] h-[500px]"></div>
-
         <HeadingImage
           imgSrcMobile={principal1mobile}
           videoSrc={video}
           alt="imagen principal"
-          className="absolute w-full h-full object-cover scale-[1.5] translate-y-[-15%] md:scale-100 md:translate-y-0"
+          className="absolute w-full h-full object-cover md:scale-100 md:translate-y-0"
         />
-<div
-  className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20
+        <div
+          className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20
     md:hidden lg:hidden"
-  style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
->
-  <span className="block md:inline ">DEJÁ</span>
-  <span className="block md:inline "> TU</span>
-  <span className="block"> HUELLA</span>
-</div>
-
+          style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
+        >
+          <span className="block md:inline ">DEJÁ</span>
+          <span className="block md:inline "> TU</span>
+          <span className="block"> HUELLA</span>
+        </div>
       </div>
 
       <div className="bg-crema text-purpura p-6 py-6 | lg:p-10 lg:px-15">
@@ -119,9 +115,11 @@ export default function App() {
           }
         />
       </div>
-      <div className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-crema ${
-  isScrolled ? '!text-black' : 'text-gray-300' // Usar !important con !text
-} transition-colors duration-4000 z-[999] relative`}>
+      <div
+        className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-crema ${
+          isScrolled ? "!text-black" : "text-gray-300" // Usar !important con !text
+        } transition-colors duration-4000 z-[999] relative`}
+      >
         <Line imgSrc={logo} description="EL LEGADO IMBORRABLE" />
       </div>
 
@@ -198,13 +196,18 @@ export default function App() {
         </div>
       </div>
 
-      <div className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-lila ${
-        isScrolled ? 'text-white' : 'text-lila'
-      } transition-colors duration-7000`}>
+      <div
+        className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-lila ${
+          isScrolled ? "text-white" : "text-lila"
+        } transition-colors duration-7000`}
+      >
         <Line imgSrc={logo} description="NO OLVIDES TUS RAÍCES" />
       </div>
 
-      <div className="w-full h-[540px] bg-gradient-to-b from-lila to-gris" id= "servicios">
+      <div
+        className="w-full h-[540px] bg-gradient-to-b from-lila to-gris"
+        id="servicios"
+      >
         <CarouselWrapper />
       </div>
       <div className="bg-gris text-white text-2xl p-10 font-bold lg:pt-20">
@@ -255,27 +258,6 @@ export default function App() {
       <div className="relative overflow-hidden">
         {/* Contenedor con el Hero */}
         <Hero imgSrcMobile={Nemicamobile} imgSrcDesktop={Nemicadesktop} />
-
-        {/* Header para Desktop: se muestra solo en md y superiores */}
-        <div className="hidden md:block absolute md:top-[10px] md:right-[25px] md:w-[400px] | lg:top-[80px] lg:right-[110px] lg:w-[800px] p-4 bg-crema/75 lg:p-10 ">
-          <Header
-            heading={
-              <div className="text-2xl font-normal font-sans text-left p-3 md:text-xl text-purpura">
-                Las huellas mnémicas son los rastros que quedan en el cerebro
-                como resultado del almacenamiento de la información. Estas
-                huellas se forman a través de las experiencias y son esenciales
-                para el funcionamiento de la memoria.
-              </div>
-            }
-            description={
-              <div className="text-2xl font-normal font-sans text-left p-3 md:text-xl text-purpura">
-                En NEMICA, realizamos un proceso que emula la función de las
-                células mnémicas que permiten la reconstrucción y recuperación
-                de los recuerdos para preservar la memoria.
-              </div>
-            }
-          />
-        </div>
       </div>
 
       {/* Header para Mobile: se muestra solo en pantallas pequeñas */}
@@ -304,7 +286,19 @@ export default function App() {
           BackgroundWithIcons
           bgDesktopIcon={bgDesktopIcon}
           bgMobileIcon={bgMobileIcon}
-          icons={[one, two, three, four, five, six, seven, eight, one, two ,three]}
+          icons={[
+            one,
+            two,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            one,
+            two,
+            three,
+          ]}
         />
       </div>
 

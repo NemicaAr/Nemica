@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../index.css";
 import Card from "./Card";
 
-//import Cards
+// Importación de imágenes para las cards
 import bio1A from "../assets/images/cards/Bio1A.jpg";
 import histograma1A from "../assets/images/cards/histograma1A.webp";
 import clip2 from "../assets/images/cards/Clip2.webp";
@@ -41,19 +41,54 @@ const CarouselWrapper = () => {
     [carousel]
   );
 
+  // Referencia para almacenar el intervalo de autoplay
+  const intervalRef = useRef(null);
+
+  // Función para iniciar el autoplay
+  const startAutoplay = () => {
+    if (instanceRef.current) {
+      intervalRef.current = setInterval(() => {
+        instanceRef.current.next();
+      }, 1000); // Cambia de slide cada 1 segundo
+    }
+  };
+
+  // Función para detener el autoplay
+  const stopAutoplay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
   useEffect(() => {
-    if (!instanceRef.current) return;
-    const interval = setInterval(() => {
-      instanceRef.current.next();
-    }, 1000); // Cambia de slide cada 3 segundos
-    return () => clearInterval(interval);
+    startAutoplay();
+    return () => {
+      stopAutoplay();
+    };
   }, [instanceRef]);
+
+  // Handlers para pausar/reanudar al mantener el click
+  const handleMouseDown = () => {
+    stopAutoplay();
+  };
+
+  const handleMouseUp = () => {
+    startAutoplay();
+  };
 
   return (
     <div className="wrapper overflow-x-hidden">
-      <div className="scene ">
+      <div className="scene">
         <div className="carousel keen-slider" ref={sliderRef}>
-          <div className="carousel__cell number-slide6">
+          {/* Contenedor 1 */}
+          <div
+            className="carousel__cell number-slide6"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="RESUMEN BIOGRÁFICO"
               imgSrc={bio1A}
@@ -61,7 +96,14 @@ const CarouselWrapper = () => {
               description="Recorre, describí y sintetiza la trayectoria, expresando el significado que tuvo para que nuevas y futuras generaciones tengan algo valioso guardado para siempre."
             />
           </div>
-          <div className="carousel__cell number-slide2">
+          {/* Contenedor 2 */}
+          <div
+            className="carousel__cell number-slide2"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="HISTOGRAMA"
               imgSrc={histograma1A}
@@ -69,7 +111,14 @@ const CarouselWrapper = () => {
               description="Destacá los hitos más importantes que marcaron el camino construido, y mira cronológicamente esos logros y eventos del proyecto de vida que fueron únicos."
             />
           </div>
-          <div className="carousel__cell number-slide3">
+          {/* Contenedor 3 */}
+          <div
+            className="carousel__cell number-slide3"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="CLIP DE VIDA"
               imgSrc={clip2}
@@ -77,7 +126,14 @@ const CarouselWrapper = () => {
               description="Transmití esas experiencias que llenaron el corazón, que son vivencias que emocionan y que reviven momentos que entusiasman."
             />
           </div>
-          <div className="carousel__cell number-slide4">
+          {/* Contenedor 4 */}
+          <div
+            className="carousel__cell number-slide4"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="ÁRBOL GENEALÓGICO"
               imgSrc={genealogia1A}
@@ -85,7 +141,14 @@ const CarouselWrapper = () => {
               description="Armá la línea familiar, para conocer los protagonistas de una generación a otra y descubrir en la transmisión de esa herencia del pasado, tradiciones arraigadas que dan muchas veces sentido al hoy y al mañana."
             />
           </div>
-          <div className="carousel__cell number-slide5">
+          {/* Contenedor 5 */}
+          <div
+            className="carousel__cell number-slide5"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="TESTIMONIOS"
               imgSrc={testimonios}
@@ -93,15 +156,29 @@ const CarouselWrapper = () => {
               description="Recreá y captá desde la mirada y experiencia del círculo íntimo esa esencia personal, generando un retrato con los rasgos característicos."
             />
           </div>
-          <div className="carousel__cell number-slide6">
+          {/* Contenedor 6 */}
+          <div
+            className="carousel__cell number-slide6"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
-              title="CIRCULO DE RELACIONES"
+              title="CÍRCULO DE RELACIONES"
               imgSrc={relaciones}
               h1="¡Esos vínculos construidos!"
               description="Mostrá las relaciones con familiares y amigos que marcaron e influenciaron el desarrollo y crecimiento personal."
             />
           </div>
-          <div className="carousel__cell number-slide6">
+          {/* Contenedor 7 */}
+          <div
+            className="carousel__cell number-slide6"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="SÍNTESIS GENÉTICA"
               imgSrc={genetica1A}
@@ -109,7 +186,14 @@ const CarouselWrapper = () => {
               description="Dejá claro esos rasgos tradicionales que inevitablemente se heredan, que son parte de la identidad y que seguramente se transmitan a las siguientes generaciones."
             />
           </div>
-          <div className="carousel__cell number-slide6">
+          {/* Contenedor 8 */}
+          <div
+            className="carousel__cell number-slide6"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+          >
             <Card
               title="MUSEUM"
               imgSrc={Museum1B}
