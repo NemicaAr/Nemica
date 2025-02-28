@@ -54,7 +54,7 @@ export default function BackgroundWithIconsCarousel({ bgDesktopIcon, bgMobileIco
             <img
               src={icon}
               alt={`Icono ${index}`}
-              className="w-25 h-25 lg:w-40 lg:h-40 cursor-pointer"
+              className="w-25 h-28 lg:w-40 lg:h-45 cursor-pointer"
               onClick={handleIconClick} // Evento de clic para desplazarse al carrusel
             />
           </div>
