@@ -16,7 +16,7 @@ const NavBar = ({ imgSrc, title }) => {
           <img src={imgSrc} alt="Icono" className="h-12 w-12" />
         </div>
         <div>
-          <img src={title} alt="Logo" className="h-8" />
+          <img src={title} alt="Logo" className="h-10" />
         </div>
       </section>
       <ul

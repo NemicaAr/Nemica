@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../index.css";
@@ -31,7 +31,7 @@ const carousel = (slider) => {
 };
 
 const CarouselWrapper = () => {
-  const [sliderRef] = useKeenSlider(
+  const [sliderRef, instanceRef] = useKeenSlider(
     {
       loop: true,
       selector: ".carousel__cell",
@@ -40,6 +40,14 @@ const CarouselWrapper = () => {
     },
     [carousel]
   );
+
+  useEffect(() => {
+    if (!instanceRef.current) return;
+    const interval = setInterval(() => {
+      instanceRef.current.next();
+    }, 1000); // Cambia de slide cada 3 segundos
+    return () => clearInterval(interval);
+  }, [instanceRef]);
 
   return (
     <div className="wrapper overflow-x-hidden">

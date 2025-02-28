@@ -96,7 +96,7 @@ export default function Form() {
 
   return (
     <div className="form-container bg-grisClaro lg:mx-30 lg:my-15 p-5 text-purpura lg:px-60 lg:rounded-xl">
-      <h1 className="text-3xl font-bold lg:text-4xl lg:text-left lg:py-3 py-2">
+      <h1 className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-3 py-2">
        Envíanos tus datos para que nos pongamos en contacto
       </h1>
       <form onSubmit={handleSubmit}>
@@ -167,8 +167,8 @@ export default function Form() {
           </div>
         </div>
 
-        <div className="bg-grisClaro text-left rounded-lg mx-auto ">
-          <p className="text-lg font-semibold text-purpura mb-4 lg:text-left lg:w-2xl lg:text-2xl lg:right-2 py-8">
+        <div className="bg-grisClaro  rounded-lg mx-auto ">
+          <p className="text-2xl font-bold text-purpura mb-4 lg:text-left lg:w-4xl lg:text-3xl lg:font-bold lg:right-2 py-8">
             Elegí los formatos que más te interesen o el legado completo:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:text-2xl ">

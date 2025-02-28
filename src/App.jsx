@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 //importacion de componentes
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
@@ -48,6 +50,29 @@ import eight from "./assets/images/icons/8.png";
 
 
 export default function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Añadir verificación de entorno de ejecución
+      if (typeof window === 'undefined') return;
+      
+      // Agregar debounce para mejor rendimiento
+      const scrollCheck = setTimeout(() => {
+        console.log('Posición actual del scroll:', window.scrollY);
+        setIsScrolled(window.scrollY > 50);
+      }, 100);
+  
+      return () => clearTimeout(scrollCheck);
+    };
+  
+    // Ejecutar inmediatamente al montar
+    handleScroll();
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="bg-grisMedio">
       <div>
@@ -65,14 +90,16 @@ export default function App() {
           alt="imagen principal"
           className="absolute w-full h-full object-cover scale-[1.5] translate-y-[-15%] md:scale-100 md:translate-y-0"
         />
-        <div
-          className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20 | lg:text-8xl lg:left-330 lg:top-45 lg:text-gris lg:drop-shadow-none"
-          style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
-        >
-          <span className="block md:inline ">DEJÁ</span>
-          <span className="block md:inline "> TU</span>
-          <span className="block"> HUELLA</span>
-        </div>
+<div
+  className="absolute top-25 left-0 p-4 text-white text-7xl font-extrabold drop-shadow-lg text-left tracking-wide leading-20
+    md:hidden lg:hidden"
+  style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
+>
+  <span className="block md:inline ">DEJÁ</span>
+  <span className="block md:inline "> TU</span>
+  <span className="block"> HUELLA</span>
+</div>
+
       </div>
 
       <div className="bg-crema text-purpura p-6 py-6 | lg:p-10 lg:px-15">
@@ -92,7 +119,9 @@ export default function App() {
           }
         />
       </div>
-      <div className="font-sans font-bold text-xl pb-8 | lg:text-2xl lg:pb-10 bg-crema">
+      <div className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-crema ${
+  isScrolled ? '!text-black' : 'text-gray-300' // Usar !important con !text
+} transition-colors duration-4000 z-[999] relative`}>
         <Line imgSrc={logo} description="EL LEGADO IMBORRABLE" />
       </div>
 
@@ -169,15 +198,16 @@ export default function App() {
         </div>
       </div>
 
-      <div className="font-bold font-sans text-xl bg-lila pb-15 border-lila text-white | lg:text-2xl">
+      <div className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-lila ${
+        isScrolled ? 'text-white' : 'text-lila'
+      } transition-colors duration-7000`}>
         <Line imgSrc={logo} description="NO OLVIDES TUS RAÍCES" />
       </div>
 
       <div className="w-full h-[540px] bg-gradient-to-b from-lila to-gris" id= "servicios">
         <CarouselWrapper />
       </div>
-
-      <div className="bg-gris text-white text-2xl p-5 font-bold lg:pt-20">
+      <div className="bg-gris text-white text-2xl p-10 font-bold lg:pt-20">
         <h1>RESGUARDA DE FORMA SEGURA Y PERSONAL ESE TESORO</h1>
       </div>
       <div
@@ -187,7 +217,7 @@ export default function App() {
         {/* Contenedor 1 */}
         <div className="flex flex-col items-center text-center lg:pr-20">
           <Hero imgSrcMobile={pc} imgSrcDesktop={pc} />
-          <h2 className="mt-5 pb-10 w-[320px] lg:w-[400px]">
+          <h2 className="mt-5 pb-10 max-w-[320px] lg:w-[400px]">
             Un lugar único, para tener y ver de una manera clara, atractiva y
             simple tu legado completo.
           </h2>
@@ -196,7 +226,7 @@ export default function App() {
         {/* Contenedor 2 */}
         <div className="flex flex-col items-center text-center">
           <Hero imgSrcMobile={link} imgSrcDesktop={link} />
-          <h2 className="mt-5 pb-10 w-[400px] lg:w-[400px] lg:pb-13">
+          <h2 className="mt-5 pb-10 max-w-[320px] lg:max-w-[400px] lg:pb-5">
             Un espacio de fácil y rápido acceso para que esté por siempre a la
             mano de las generaciones por vivir.
           </h2>
@@ -205,7 +235,7 @@ export default function App() {
         {/* Contenedor 3 */}
         <div className="flex flex-col items-center text-center">
           <Hero imgSrcMobile={qrcode} imgSrcDesktop={qrcode} />
-          <h2 className="mt-5 pb-10 w-[300px] lg:w-[300px]">
+          <h2 className="mt-5 pb-10 max-w-[300px] lg:w-[300px]">
             Una estructura flexible para compartirlo de la forma que quieras y
             con quien quieras.
           </h2>
@@ -294,13 +324,13 @@ export default function App() {
         lg:top-25 lg:left-20 lg:w-[800px]"
           style={{ textShadow: ":2px 2px 4px rgba(0,0,0,0.7)" }}
         >
-          <span className="block md:inline lg:text-4xl lg:text-purpura">
+          <span className="block md:inline lg:text-4xl lg:texct-white">
             MAS ALLÁ DE LA{" "}
           </span>
-          <span className="block md:inline lg:text-4xl lg:text-purpura">
+          <span className="block md:inline lg:text-4xl lg:text-white">
             HERENCIA MATERIAL
           </span>
-          <span className="block font-normal py-2 text-2xl lg:text-3xl tracking-wide leading-8 pl-0 pr-15 lg:w-700px] lg:text-purpura">
+          <span className="block font-normal py-2 text-2xl lg:text-3xl tracking-wide leading-8 pl-0 pr-15 lg:w-700px] lg:text-white">
             Ahora tenés la oportunidad de dejar plasmado ese patrimonio
             intangible e inmaterial muy valioso que pocos conservan
           </span>
