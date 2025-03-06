@@ -101,13 +101,13 @@ export default function App() {
       <div className="bg-crema text-purpura p-6 py-6 | lg:p-10 lg:px-15">
         <Header
           heading={
-            <div className="leading-10 text-3xl font-bold font-sans text-left tracking-wider | lg:px-40 lg:text-center lg:text-5xl lg:leading-15">
+            <div className="leading-9 text-2xl font-bold font-sans text-left tracking-wider | lg:px-40 lg:text-center lg:text-5xl lg:leading-15">
               Transmití de generación en generación la tradición familiar y tu
               legado.
             </div>
           }
           description={
-            <div className="text-purpura mt-2 font-normal leading-8 text-left tracking-wider text-2xl py-4 | lg:text-purpura lg:text-3xl lg:px-50 lg:leading-10 lg:text-center lg:font-normal">
+            <div className="text-purpura mt-2 font-normal leading-7 text-left tracking-wider text-xl py-4 | lg:text-purpura lg:text-3xl lg:px-50 lg:leading-10 lg:text-center lg:font-normal">
               Concretiza y deja marcada la huella que podrá ser una fuente de
               inspiración y un faro para otros, para que quede en los corazones
               y las mentes de quienes amas.
@@ -116,7 +116,7 @@ export default function App() {
         />
       </div>
       <div
-        className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-crema ${
+        className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-30 bg-crema ${
           isScrolled ? "!text-black" : "text-gray-300" // Usar !important con !text
         } transition-colors duration-4000 z-[999] relative`}
       >
@@ -132,7 +132,7 @@ export default function App() {
             className="w-full h-full object-cover"
           />
           <div
-            className="text-left absolute drop-shadow-xl bottom-4 left-4 p-4 text-white text-4xl font-extrabold lg:text-4xl lg:bottom-10 lg:left-20 lg:p-4"
+            className="text-left absolute drop-shadow-xl bottom-4 left-4 p-4 text-white text-4xl font-extrabold lg:text-4xl lg:bottom-2 lg:left-10"
             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
           >
             <span className="block md:inline"> ¡TU VIDA MERECE</span>
@@ -140,7 +140,7 @@ export default function App() {
           </div>
         </div>
         {/* Header 1 */}
-        <div className="bg-lila text-white p-2 lg:[grid-column:1] lg:[grid-row:2]">
+        <div className="bg-lila text-white lg:[grid-column:1] lg:[grid-row:2]">
           <div className="p-6 pt-15 lg:p-13">
             <Header
               heading={
@@ -159,7 +159,7 @@ export default function App() {
           </div>
         </div>
         {/* Hero 2 */}
-        <div className="relative overflow-hidden lg:[grid-column:2] lg:[grid-row:1] -mb-8 lg:mb-0">
+        <div className="relative overflow-hidden lg:[grid-column:2] lg:[grid-row:1] -mb-8 lg:mb-">
           <Hero
             imgSrcMobile={caballomobile}
             imgSrcDesktop={caballodesktop}
@@ -174,8 +174,8 @@ export default function App() {
           </div>
         </div>
         {/* Header 2 */}
-        <div className="bg-lila text-white p-0 lg:[grid-column:2] lg:[grid-row:2]">
-          <div className="p-8 pt-18 lg:p-15">
+        <div className="bg-lila text-white lg:[grid-column:2] lg:[grid-row:2]">
+          <div className="p-8 pt-18 lg:p-13">
             <Header
               heading={
                 <div className="text-2xl font-bold text-left lg:px-9">
@@ -197,7 +197,7 @@ export default function App() {
       </div>
 
       <div
-        className={`font-sans font-bold text-xl pb-8 lg:text-2xl lg:pb-10 bg-lila ${
+        className={`font-sans font-bold text-xl pb-30 lg:text-2xl lg:pb-50 bg-lila ${
           isScrolled ? "text-white" : "text-lila"
         } transition-colors duration-7000`}
       >
@@ -238,7 +238,7 @@ export default function App() {
         {/* Contenedor 3 */}
         <div className="flex flex-col items-center text-center">
           <Hero imgSrcMobile={qrcode} imgSrcDesktop={qrcode} />
-          <h2 className="mt-5 pb-10 max-w-[300px] lg:w-[300px]">
+          <h2 className="mt-5 pb-10 max-w-[300px] lg:w-[350px]">
             Una estructura flexible para compartirlo de la forma que quieras y
             con quien quieras.
           </h2>
@@ -304,8 +304,8 @@ export default function App() {
 
       <div className="relative overflow-hidden ">
         <section
-          className="hidden lg:block absolute text-xl lg:text-2xl text-beige font-bold 
-                    left-1/2 bottom-8 transform -translate-x-1/2 "
+          className=" absolute text-xl lg:text-2xl text-white font-bold 
+                    left-20 bottom-4  lg:left-50 lg:bottom-8 "
         >
           <Line imgSrc={logo} description="VIVIR ES TRASCENDER" />
         </section>
@@ -319,12 +319,12 @@ export default function App() {
           style={{ textShadow: ":2px 2px 4px rgba(0,0,0,0.7)" }}
         >
           <span className="block md:inline lg:text-4xl lg:texct-white">
-            MAS ALLÁ DE LA{" "}
+            MAS ALLÁ DE LA
           </span>
           <span className="block md:inline lg:text-4xl lg:text-white">
             HERENCIA MATERIAL
           </span>
-          <span className="block font-normal py-2 text-2xl lg:text-3xl tracking-wide leading-8 pl-0 pr-15 lg:w-700px] lg:text-white">
+          <span className="block font-normal py-2 text-xl lg:text-3xl pl-0 pr-15 lg:w-[700px] lg:text-white">
             Ahora tenés la oportunidad de dejar plasmado ese patrimonio
             intangible e inmaterial muy valioso que pocos conservan
           </span>

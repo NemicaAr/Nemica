@@ -49,7 +49,7 @@ export default function BackgroundWithIconsCarousel({ bgDesktopIcon, bgMobileIco
 
       {/* 🚀 Carrusel de iconos con movimiento continuo */}
       <div ref={sliderRef} className="keen-slider absolute z-10 w-full px-4">
-        {[...icons, ...icons].map((icon, index) => (
+        {[...icons,].map((icon, index) => (
           <div key={index} className="keen-slider__slide flex justify-center">
             <img
               src={icon}
