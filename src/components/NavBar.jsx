@@ -22,11 +22,15 @@ const NavBar = ({ imgSrc, title }) => {
             </a>
           </li>
           <li>
+            <a href="#contactenos" className="hover:text-white font-bold">
+              Contactanos
+            </a>
+          </li>
+          <li>
             <a
-              href="#contactenos"
               className="bg-gray-200 text-black font-bold px-4 py-2 rounded hover:bg-white"
             >
-              Contactanos
+              Log In
             </a>
           </li>
         </ul>
@@ -70,6 +74,13 @@ const NavBar = ({ imgSrc, title }) => {
                 Contactanos
               </a>
             </li>
+            <li>
+            <a
+              className="bg-gray-200 text-black font-bold px-6 py-0.5 rounded hover:bg-white"
+            >
+              Log In
+            </a>
+          </li>
           </ul>
         </div>
       )}

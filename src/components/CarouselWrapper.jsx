@@ -68,26 +68,30 @@ const CarouselWrapper = () => {
     };
   }, [instanceRef]);
 
-  // Handlers para pausar/reanudar al mantener el click
-  const handleMouseDown = () => {
+  // Estos handlers se usan tanto para desktop como para mobile
+  const handlePause = () => {
     stopAutoplay();
   };
 
-  const handleMouseUp = () => {
+  const handleResume = () => {
     startAutoplay();
   };
 
   return (
     <div className="wrapper overflow-x-hidden">
       <div className="scene">
-        <div className="carousel keen-slider" ref={sliderRef}>
+        {/* Para escritorio: se detiene al pasar el mouse sobre el carrusel */}
+        <div
+          className="carousel keen-slider"
+          ref={sliderRef}
+          onMouseEnter={handlePause}
+          onMouseLeave={handleResume}
+        >
           {/* Contenedor 1 */}
           <div
             className="carousel__cell number-slide6"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="RESUMEN BIOGRÁFICO"
@@ -99,10 +103,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 2 */}
           <div
             className="carousel__cell number-slide2"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="HISTOGRAMA"
@@ -114,10 +116,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 3 */}
           <div
             className="carousel__cell number-slide3"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="CLIP DE VIDA"
@@ -129,10 +129,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 4 */}
           <div
             className="carousel__cell number-slide4"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="ÁRBOL GENEALÓGICO"
@@ -144,10 +142,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 5 */}
           <div
             className="carousel__cell number-slide5"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="TESTIMONIOS"
@@ -159,10 +155,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 6 */}
           <div
             className="carousel__cell number-slide6"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="CÍRCULO DE RELACIONES"
@@ -174,10 +168,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 7 */}
           <div
             className="carousel__cell number-slide6"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="SÍNTESIS GENÉTICA"
@@ -189,10 +181,8 @@ const CarouselWrapper = () => {
           {/* Contenedor 8 */}
           <div
             className="carousel__cell number-slide6"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onTouchStart={handleMouseDown}
-            onTouchEnd={handleMouseUp}
+            onTouchStart={handlePause}
+            onTouchEnd={handleResume}
           >
             <Card
               title="MUSEUM"

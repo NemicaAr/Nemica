@@ -171,7 +171,7 @@ export default function Form() {
           <p className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-10 py-8">
             Elegí los formatos que más te interesen o el legado completo:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:text-xl ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:text-xl md:w-[700px] ">
             <label className="flex items-center gap-2 text-purpura">
               <input
                 type="checkbox"

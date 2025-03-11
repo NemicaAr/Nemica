@@ -305,7 +305,7 @@ export default function App() {
       <div className="relative overflow-hidden ">
         <section
           className=" absolute text-xl lg:text-2xl text-white font-bold 
-                    left-20 bottom-4  lg:left-50 lg:bottom-8 "
+                    left-20 bottom-4  lg:left-60 lg:bottom-8 "
         >
           <Line imgSrc={logo} description="VIVIR ES TRASCENDER" />
         </section>
@@ -318,15 +318,15 @@ export default function App() {
         lg:top-25 lg:left-20 lg:w-[800px]"
           style={{ textShadow: ":2px 2px 4px rgba(0,0,0,0.7)" }}
         >
-          <span className="block md:inline lg:text-4xl lg:texct-white">
-            MAS ALLÁ DE LA
+          <span className="block md:inline lg:text-4xl lg:text-white">
+          MAS ALLÁ DE LA&nbsp;
           </span>
           <span className="block md:inline lg:text-4xl lg:text-white">
-            HERENCIA MATERIAL
+          HERENCIA MATERIAL
           </span>
-          <span className="block font-normal py-2 text-xl lg:text-3xl pl-0 pr-15 lg:w-[700px] lg:text-white">
+          <span className="block font-normal py-2 text-xl lg:text-3xl pl-0 pr-6 lg:w-[700px] lg:text-white lg:text-center">
             Ahora tenés la oportunidad de dejar plasmado ese patrimonio
-            intangible e inmaterial muy valioso que pocos conservan
+            intangible e inmaterial muy valioso que pocos conservan.
           </span>
         </div>
       </div>
