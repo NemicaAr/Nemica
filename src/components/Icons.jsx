@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 
 const animation = { duration: 10000, easing: (t) => t };
 
-export default function BackgroundWithIconsCarousel({ bgDesktopIcon, bgMobileIcon, icons }) {
+export default function BackgroundWithIconsCarousel({ bgDesktopIcon, bgMobileIcon, icons, titles }) {
   const [sliderRef] = useKeenSlider({
     loop: true,
     renderMode: "performance",
@@ -47,16 +47,19 @@ export default function BackgroundWithIconsCarousel({ bgDesktopIcon, bgMobileIco
         <img src={bgMobileIcon} alt="Fondo" className="w-full h-full object-cover" />
       </picture>
 
-      {/* 🚀 Carrusel de iconos con movimiento continuo */}
+      {/* 🚀 Carrusel de iconos con títulos */}
       <div ref={sliderRef} className="keen-slider absolute z-10 w-full px-4">
-        {[...icons,].map((icon, index) => (
-          <div key={index} className="keen-slider__slide flex justify-center">
+        {icons.map((icon, index) => (
+          <div key={index} className="keen-slider__slide flex flex-col justify-center items-center">
             <img
               src={icon}
               alt={`Icono ${index}`}
-              className="w-25 h-28 lg:w-40 lg:h-45 cursor-pointer"
-              onClick={handleIconClick} // Evento de clic para desplazarse al carrusel
+              className="w-25 h-25 lg:w-40 lg:h-40 cursor-pointer"
+              onClick={handleIconClick}
             />
+            <h2 className="text-sn lg:text-xl mt-1">
+              {titles && titles[index] ? titles[index] : `Título ${index + 1}`}
+            </h2>
           </div>
         ))}
       </div>

@@ -281,7 +281,7 @@ export default function App() {
         />
       </div>
 
-      <div>
+      <div className="font-bold">
         <Icons
           BackgroundWithIcons
           bgDesktopIcon={bgDesktopIcon}
@@ -295,9 +295,16 @@ export default function App() {
             six,
             seven,
             eight,
-            one,
-            two,
-            three,
+          ]}
+          titles={[
+            "Síntesis Genética",
+            "Museum",
+            "Resumen Biografico",
+            "Clip de Vida",
+            "Circulo de Relaciones",
+            "Árbol Genealógico",
+            "Testimonios",
+            "Histograma",
           ]}
         />
       </div>
