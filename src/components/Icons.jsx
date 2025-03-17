@@ -15,7 +15,7 @@ export default function BackgroundWithIconsCarousel({
     renderMode: "performance",
     drag: true,
     slides: {
-      perView: 3,
+      perView: 2,
       spacing: 1,
     },
     breakpoints: {
@@ -69,7 +69,7 @@ export default function BackgroundWithIconsCarousel({
               className="w-20  h-20 lg:w-40 lg:h-40 cursor-pointer mb-auto"
               onClick={handleIconClick}
             />
-            <div className="w-[300px] text-center">
+            <div className="w-[370px] text-center">
               <h2 className="text-sn lg:text-xl mt-1">
                 {titles && titles[index]
                   ? titles[index]
