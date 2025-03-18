@@ -108,7 +108,7 @@ export default function App() {
           }
           description={
             <div className="text-purpura mt-2 font-normal leading-7 text-left tracking-wider text-xl py-4 | lg:text-purpura lg:text-3xl lg:px-50 lg:leading-10 lg:text-center lg:font-normal">
-              Concretiza y deja marcada la huella que podrá ser una fuente de
+              Concretizá y dejá marcada la huella que podrá ser una fuente de
               inspiración y un faro para otros, para que quede en los corazones
               y las mentes de quienes amas.
             </div>
@@ -245,7 +245,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="bg-gris font-bold text-white text-xl p-5 pb-10 | lg:text-2xl text-center">
+      <div className="bg-gris font-bold text-white text-xl p-6 pb-10 | lg:text-2xl text-center">
         <Line imgSrc={logo} description="LA EXPERIENCIA INOLVIDABLE" />
       </div>
 
@@ -286,16 +286,7 @@ export default function App() {
           BackgroundWithIcons
           bgDesktopIcon={bgDesktopIcon}
           bgMobileIcon={bgMobileIcon}
-          icons={[
-            one,
-            two,
-            three,
-            four,
-            five,
-            six,
-            seven,
-            eight,
-          ]}
+          icons={[one, two, three, four, five, six, seven, eight]}
           titles={[
             "Síntesis Genética",
             "Museum",
@@ -312,10 +303,11 @@ export default function App() {
       <div className="relative overflow-hidden ">
         <section
           className=" absolute text-xl lg:text-2xl text-white font-bold 
-                    left-20 bottom-4  lg:left-60 lg:bottom-8 "
+                     left-6 bottom-4  lg:left-60 lg:bottom-8 "
         >
           <Line imgSrc={logo} description="VIVIR ES TRASCENDER" />
         </section>
+
         <Hero
           imgSrcMobile={intangible2mobile}
           imgSrcDesktop={intangible2desktop}
@@ -323,15 +315,14 @@ export default function App() {
         <div
           className="absolute top-8 left-3 p-3 text-white text-3xl font-bold drop-shadow-lg text-left tracking-wide leading-12
         lg:top-25 lg:left-20 lg:w-[800px]"
-          style={{ textShadow: ":2px 2px 4px rgba(0,0,0,0.7)" }}
         >
-          <span className="block md:inline lg:text-4xl lg:text-white">
-          MAS ALLÁ DE LA&nbsp;
+          <span className="block md:inline text-2xl lg:text-4xl lg:text-white">
+            MAS ALLÁ DE LA&nbsp;
           </span>
-          <span className="block md:inline lg:text-4xl lg:text-white">
-          HERENCIA MATERIAL
+          <span className="block md:inline text-2xl lg:text-4xl lg:text-white">
+            HERENCIA MATERIAL
           </span>
-          <span className="block font-normal py-2 text-xl lg:text-3xl pl-0 pr-6 lg:w-[700px] lg:text-white lg:text-center">
+          <span className="block font-normal py-2 text-sm lg:text-3xl pl-0 pr-6 w-[300px] lg:w-[700px] lg:text-white lg:text-center">
             Ahora tenés la oportunidad de dejar plasmado ese patrimonio
             intangible e inmaterial muy valioso que pocos conservan.
           </span>

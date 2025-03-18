@@ -97,7 +97,7 @@ const CarouselWrapper = () => {
               title="RESUMEN BIOGRÁFICO"
               imgSrc={bio1A}
               h1="¡El Pergamino de vida!"
-              description="Recorre, describí y sintetiza la trayectoria, expresando el significado que tuvo para que nuevas y futuras generaciones tengan algo valioso guardado para siempre."
+              description="Recorré, describí y sintetizá la trayectoria, expresando el significado que tuvo para que nuevas y futuras generaciones tengan algo valioso guardado para siempre."
             />
           </div>
           {/* Contenedor 2 */}
@@ -110,7 +110,7 @@ const CarouselWrapper = () => {
               title="HISTOGRAMA"
               imgSrc={histograma1A}
               h1="¡Los hechos más significativos!"
-              description="Destacá los hitos más importantes que marcaron el camino construido, y mira cronológicamente esos logros y eventos del proyecto de vida que fueron únicos."
+              description="Destacá los hitos más importantes que marcaron el camino construido, y mirá cronológicamente esos logros y eventos del proyecto de vida que fueron únicos."
             />
           </div>
           {/* Contenedor 3 */}
