@@ -291,11 +291,11 @@ export default function App() {
             "Síntesis Genética",
             "Museum",
             "Resumen Biografico",
-            "Clip de Vida",
+            "Histograma",
             "Circulo de Relaciones",
             "Árbol Genealógico",
             "Testimonios",
-            "Histograma",
+            "Pasiones",
           ]}
         />
       </div>
