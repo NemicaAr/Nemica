@@ -372,8 +372,8 @@ export default function Form() {
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
-                name="Pasiones"
-                checked={formData.opciones.sintesisGenetica}
+                name="pasiones"
+                checked={formData.opciones.pasiones}
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
