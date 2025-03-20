@@ -16,6 +16,7 @@ export default function Form() {
       videoclip: false,
       museum: false,
       sintesisGenetica: false,
+      pasiones: false,
       todos: false,
     },
   });
@@ -55,6 +56,7 @@ export default function Form() {
       videoclip: formData.opciones.videoclip ? "Sí" : "No",
       museum: formData.opciones.museum ? "Sí" : "No",
       sintesisGenetica: formData.opciones.sintesisGenetica ? "Sí" : "No",
+      pasiones: formData.opciones.pasiones ? "si" : "no",
       todos: formData.opciones.todos ? "Sí" : "No",
     };
 
@@ -84,6 +86,7 @@ export default function Form() {
               videoclip: false,
               museum: false,
               sintesisGenetica: false,
+              pasiones: false,
               todos: false,
             },
           });
@@ -95,22 +98,19 @@ export default function Form() {
   };
 
   return (
-    <div className="form-container bg-grisClaro lg:mx-30 lg:my-15 p-5 text-purpura lg:px-60 lg:rounded-xl">
-      <h1 className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-3 py-2">
+    <div className="form-container bg-grisClaro my-15 mx-auto p-5 w-full lg:max-w-7xl sm:px-10 md:px-20 lg:px-30 text-purpura lg:rounded-xl">
+      <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl lg:text-left py-3">
         Envíanos tus datos para que nos pongamos en contacto
       </h1>
       <form onSubmit={handleSubmit}>
         {/* Nuevo grid para los inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 lg:text-2xl">
           <div className="w-full">
-            <label
-              htmlFor="nombre"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="nombre" className="block text-sm font-medium text-left">
               Nombre
             </label>
             <input
-              className="mt-1 block w-full px-4 py-2 border border-black-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
               type="text"
               id="nombre"
               name="nombre"
@@ -122,14 +122,11 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="apellido"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="apellido" className="block text-sm font-medium text-left">
               Apellido
             </label>
             <input
-              className="mt-1 block w-full px-4 py-2 border border-black-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
               type="text"
               id="apellido"
               name="apellido"
@@ -141,14 +138,11 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-left">
               Email
             </label>
             <input
-              className="mt-1 block w-full px-4 py-2 border border-black-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
               type="email"
               id="email"
               name="email"
@@ -160,14 +154,11 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label
-              htmlFor="telefono"
-              className="block text-sm font-medium text-left"
-            >
+            <label htmlFor="telefono" className="block text-sm font-medium text-left">
               Teléfono celular
             </label>
             <input
-              className="mt-1 block w-full px-4 py-2 border border-black-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
               type="tel"
               id="telefono"
               name="telefono"
@@ -179,7 +170,8 @@ export default function Form() {
           </div>
         </div>
 
-        <div className="bg-grisClaro rounded-lg mx-auto block lg:hidden">
+        {/* Sección para mobile */}
+        <div className="bg-grisClaro rounded-lg mx-auto block lg:hidden mt-8">
           <p className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-10 py-8">
             Elegí los formatos que más te interesen o el legado completo:
           </p>
@@ -277,113 +269,123 @@ export default function Form() {
           </div>
         </div>
 
-        <div className="bg-grisClaro rounded-lg mx-auto hidden lg:block">
-  <p className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-10 py-8">
-    Elegí los formatos que más te interesen o el legado completo:
-  </p>
-  <div className="grid grid-cols-3 gap-3 lg:text-xl">
-    {/* Fila 1 */}
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="todos"
-        checked={formData.opciones.todos}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Todos
-    </label>
-    <div></div>
-    <div></div>
-    {/* Fila 2 y siguientes */}
-    <label className="flex items-center gap-2 text-purpura">
-      <input
-        type="checkbox"
-        name="arbolGenealogico"
-        checked={formData.opciones.arbolGenealogico}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Árbol genealógico
-    </label>
-    <label className="flex items-center gap-2 text-purpura">
-      <input
-        type="checkbox"
-        name="testimonios"
-        checked={formData.opciones.testimonios}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Testimonios
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="circuloRelaciones"
-        checked={formData.opciones.circuloRelaciones}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Círculo de relaciones
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="resumenBiografico"
-        checked={formData.opciones.resumenBiografico}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Resumen biográfico
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="lineaDeTiempo"
-        checked={formData.opciones.lineaDeTiempo}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Línea de tiempo
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="videoclip"
-        checked={formData.opciones.videoclip}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Videoclip
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="museum"
-        checked={formData.opciones.museum}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Museum
-    </label>
-    <label className="flex items-center gap-3 text-purpura lg:py-2">
-      <input
-        type="checkbox"
-        name="sintesisGenetica"
-        checked={formData.opciones.sintesisGenetica}
-        onChange={handleChange}
-        className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
-      />
-      Síntesis genética
-    </label>
-  </div>
-</div>
-
+        {/* Sección para desktop */}
+        <div className="bg-grisClaro rounded-lg mx-auto w-auto hidden lg:block mt-8">
+          <p className="text-2xl font-bold lg:text-4xl lg:text-left lg:py-10 py-8">
+            Elegí los formatos que más te interesen o el legado completo:
+          </p>
+          <div className="grid grid-cols-3 gap-3 lg:text-[18px]">
+            {/* Fila 1 */}
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="todos"
+                checked={formData.opciones.todos}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Todos
+            </label>
+            <div></div>
+            <div></div>
+            {/* Fila 2 y siguientes */}
+            <label className="flex items-center gap-2 text-purpura">
+              <input
+                type="checkbox"
+                name="arbolGenealogico"
+                checked={formData.opciones.arbolGenealogico}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Árbol genealógico
+            </label>
+            <label className="flex items-center gap-2 text-purpura">
+              <input
+                type="checkbox"
+                name="testimonios"
+                checked={formData.opciones.testimonios}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Testimonios
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="circuloRelaciones"
+                checked={formData.opciones.circuloRelaciones}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Círculo de relaciones
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="resumenBiografico"
+                checked={formData.opciones.resumenBiografico}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Resumen biográfico
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="lineaDeTiempo"
+                checked={formData.opciones.lineaDeTiempo}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Línea de tiempo
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="videoclip"
+                checked={formData.opciones.videoclip}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Videoclip
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="museum"
+                checked={formData.opciones.museum}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Museum
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="sintesisGenetica"
+                checked={formData.opciones.sintesisGenetica}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Síntesis genética
+            </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="Pasiones"
+                checked={formData.opciones.sintesisGenetica}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Pasiones
+            </label>
+          </div>
+        </div>
 
         <div className="lg:p-5 p-5">
           <button
             type="submit"
-            className="mt-6 w-full bg-purpura text-white font-semibold py-2 rounded-lg shadow-md hover:bg-purple-800 transition lg:w-60"
+            className="mt-6 w-full bg-purpura text-white font-semibold py-2 rounded-lg shadow-md hover:bg-purple-800 transition md:w-60"
           >
             Enviar
           </button>
