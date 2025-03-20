@@ -47,6 +47,7 @@ import five from "./assets/images/icons/5.png";
 import six from "./assets/images/icons/6.png";
 import seven from "./assets/images/icons/7.png";
 import eight from "./assets/images/icons/8.png";
+import nine from "./assets/images/icons/9.png";
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -179,7 +180,7 @@ export default function App() {
             <Header
               heading={
                 <div className="text-2xl font-bold text-left lg:px-9">
-                  Pone en valor el legado de quien amas.
+                  Poné en valor el legado de quien amas.
                 </div>
               }
               description={
@@ -286,7 +287,7 @@ export default function App() {
           BackgroundWithIcons
           bgDesktopIcon={bgDesktopIcon}
           bgMobileIcon={bgMobileIcon}
-          icons={[one, two, three, four, five, six, seven, eight]}
+          icons={[one, two, three, four, five, six, seven, eight, nine,]}
           titles={[
             "Síntesis Genética",
             "Museum",
@@ -296,6 +297,7 @@ export default function App() {
             "Árbol Genealógico",
             "Testimonios",
             "Pasiones",
+            "Clip de Vida",
           ]}
         />
       </div>

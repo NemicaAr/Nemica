@@ -1,52 +1,64 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-const animation = { duration: 10000, easing: (t) => t };
-
-export default function BackgroundWithIconsCarousel({
-  bgDesktopIcon,
-  bgMobileIcon,
-  icons,
-  titles,
-}) {
-  const [sliderRef] = useKeenSlider({
+const Carousel2D = ({ bgDesktopIcon, bgMobileIcon, icons, titles }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
-    renderMode: "performance",
     drag: true,
     slides: {
       perView: 2,
-      spacing: 1,
+      spacing: 15,
     },
     breakpoints: {
+      "(min-width: 640px)": {
+        slides: {
+          perView: 3,
+          spacing: 20,
+        },
+      },
       "(min-width: 1024px)": {
         slides: {
           perView: 5,
-          spacing: 0,
+          spacing: 30,
         },
       },
     },
-    created(s) {
-      s.moveToIdx(5, true, animation);
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
     },
   });
 
-  const handleIconClick = () => {
-    const target = document.getElementById("servicios");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+  // Autoplay
+  const intervalRef = useRef(null);
+  const startAutoplay = () => {
+    intervalRef.current = setInterval(() => {
+      instanceRef.current?.next();
+    }, 1000);
   };
 
+  const stopAutoplay = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => stopAutoplay();
+  }, []);
+
+  // Scroll a sección
+  const handleIconClick = () => {
+    const target = document.getElementById("servicios");
+    target?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Duplicamos los íconos para aumentar la densidad visual (opcional)
+  const repeatedIcons = [...icons, ...icons];
+
   return (
-    <div className="relative w-full h-[160px] md:h-[300px] lg:h-[280px] flex justify-center items-center overflow-hidden">
-      {/* 🎨 Imagen de fondo */}
+    <div className="relative w-full h-[160px] md:h-[300px] lg:h-[260px] flex justify-center items-center overflow-hidden group">
+      {/* Fondo */}
       <picture className="absolute top-0 left-0 w-full h-full">
         <source srcSet={bgDesktopIcon} media="(min-width: 768px)" />
         <img
@@ -56,24 +68,29 @@ export default function BackgroundWithIconsCarousel({
         />
       </picture>
 
-      {/* 🚀 Carrusel de iconos con títulos */}
-      <div ref={sliderRef} className="keen-slider absolute z-10 w-full px-4">
-        {icons.map((icon, index) => (
+      {/* Carrusel */}
+      <div
+        ref={sliderRef}
+        className="keen-slider w-full  px-4"
+        onMouseEnter={stopAutoplay}
+        onMouseLeave={startAutoplay}
+      >
+        {repeatedIcons.map((icon, index) => (
           <div
             key={index}
-            className="keen-slider__slide flex flex-col justify-center items-center"
+            className="keen-slider__slide flex flex-col items-center justify-center p-2"
+            onTouchStart={stopAutoplay}
+            onTouchEnd={startAutoplay}
           >
             <img
               src={icon}
-              alt={`Icono ${index}`}
-              className="w-20  h-20 lg:w-40 lg:h-40 cursor-pointer mb-auto"
+              alt={`Icono ${index + 1}`}
+              className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 cursor-pointer transition-transform hover:scale-110"
               onClick={handleIconClick}
             />
-            <div className="w-[370px] text-center">
-              <h2 className="text-sn lg:text-xl mt-1">
-                {titles && titles[index]
-                  ? titles[index]
-                  : `Título ${index + 1}`}
+            <div className="mt-2 text-center w-full max-w-[160px] md:max-w-[200px]">
+              <h2 className="text-xs md:text-sm lg:text-base font-medium">
+                {titles?.[index % titles.length] || `Título ${index + 1}`}
               </h2>
             </div>
           </div>
@@ -81,4 +98,6 @@ export default function BackgroundWithIconsCarousel({
       </div>
     </div>
   );
-}
+};
+
+export default Carousel2D;
