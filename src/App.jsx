@@ -153,7 +153,7 @@ export default function App() {
                 <div className="text-left text-xl font-extralight py-3 lg:px-9 lg:w-[570px]">
                   Te ayudamos a clarificar y resignificar el camino propio.
                   Mucha gente cree que la tarea es titánica. Por eso nunca
-                  empiezan. ¡Ahora vos podes!
+                  empiezan. ¡Ahora vos podés!
                 </div>
               }
             />
@@ -171,7 +171,7 @@ export default function App() {
             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
           >
             <span className="block md:inline"> ¡EL HOMENAJE AL</span>
-            <span className="block"> SER MAS QUERIDO!</span>
+            <span className="block"> SER MÁS QUERIDO!</span>
           </div>
         </div>
         {/* Header 2 */}
@@ -180,12 +180,12 @@ export default function App() {
             <Header
               heading={
                 <div className="text-2xl font-bold text-left lg:px-9">
-                  Poné en valor el legado de quien amas.
+                  Poné en valor el legado de quién amás.
                 </div>
               }
               description={
                 <div className="text-left text-xl font-extralight py-4 lg:px-9 lg:w-[570px]">
-                  Lo que le gustaba hacer, con quien le gustaba estar, lugares a
+                  Lo que le gustaba hacer, con quién le gustaba estar, lugares a
                   donde le encantaba ir, momentos que disfrutaba vivir y lo que
                   caracterizaba su persona: sus cualidades, sus valores, su
                   carácter, sus pasiones. Su sello. Recordalo y honralo para
@@ -232,7 +232,7 @@ export default function App() {
           <Hero imgSrcMobile={link} imgSrcDesktop={link} />
           <h2 className="mt-5 pb-10 max-w-[320px] lg:max-w-[400px] lg:pb-5">
             Un espacio de fácil y rápido acceso para que esté por siempre a la
-            mano de las generaciones por vivir.
+            mano de las generaciones por venir.
           </h2>
         </div>
 
@@ -241,7 +241,7 @@ export default function App() {
           <Hero imgSrcMobile={qrcode} imgSrcDesktop={qrcode} />
           <h2 className="mt-5 pb-10 max-w-[300px] lg:w-[350px]">
             Una estructura flexible para compartirlo de la forma que quieras y
-            con quien quieras.
+            con quién quieras.
           </h2>
         </div>
       </div>
@@ -289,15 +289,15 @@ export default function App() {
           bgMobileIcon={bgMobileIcon}
           icons={[one, two, three, four, five, six, seven, eight, nine,]}
           titles={[
-            "Síntesis Genética",
+            "Síntesis genética",
             "Museum",
-            "Resumen Biografico",
+            "Resumen biográfico",
             "Histograma",
-            "Circulo de Relaciones",
-            "Árbol Genealógico",
+            "Círculo de relaciones",
+            "Árbol genealógico",
             "Testimonios",
             "Pasiones",
-            "Clip de Vida",
+            "Clip de vida",
           ]}
         />
       </div>
@@ -319,7 +319,7 @@ export default function App() {
         lg:top-25 lg:left-20 lg:w-[800px]"
         >
           <span className="block md:inline text-2xl lg:text-4xl lg:text-white">
-            MAS ALLÁ DE LA&nbsp;
+            MÁS ALLÁ DE LA&nbsp;
           </span>
           <span className="block md:inline text-2xl lg:text-4xl lg:text-white">
             HERENCIA MATERIAL

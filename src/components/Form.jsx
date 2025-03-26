@@ -12,8 +12,8 @@ export default function Form() {
       testimonios: false,
       circuloRelaciones: false,
       resumenBiografico: false,
-      lineaDeTiempo: false,
-      videoclip: false,
+      Histograma: false,
+      clipDeVida: false,
       museum: false,
       sintesisGenetica: false,
       pasiones: false,
@@ -52,8 +52,8 @@ export default function Form() {
       testimonios: formData.opciones.testimonios ? "Sí" : "No",
       circuloRelaciones: formData.opciones.circuloRelaciones ? "Sí" : "No",
       resumenBiografico: formData.opciones.resumenBiografico ? "Sí" : "No",
-      lineaDeTiempo: formData.opciones.lineaDeTiempo ? "Sí" : "No",
-      videoclip: formData.opciones.videoclip ? "Sí" : "No",
+      histograma: formData.opciones.histograma ? "Sí" : "No",
+      clipDeVida: formData.opciones.clipDeVida ? "Sí" : "No",
       museum: formData.opciones.museum ? "Sí" : "No",
       sintesisGenetica: formData.opciones.sintesisGenetica ? "Sí" : "No",
       pasiones: formData.opciones.pasiones ? "si" : "no",
@@ -82,8 +82,8 @@ export default function Form() {
               testimonios: false,
               circuloRelaciones: false,
               resumenBiografico: false,
-              lineaDeTiempo: false,
-              videoclip: false,
+              histrograma: false,
+              clipDeVida: false,
               museum: false,
               sintesisGenetica: false,
               pasiones: false,
@@ -100,7 +100,7 @@ export default function Form() {
   return (
     <div className="form-container bg-grisClaro my-15 mx-auto p-5 w-full lg:max-w-7xl sm:px-10 md:px-20 lg:px-30 text-purpura lg:rounded-xl">
       <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl lg:text-left py-3">
-        Envíanos tus datos para que nos pongamos en contacto
+        Envianos tus datos para que nos pongamos en contacto
       </h1>
       <form onSubmit={handleSubmit}>
         {/* Nuevo grid para los inputs */}
@@ -116,7 +116,7 @@ export default function Form() {
               name="nombre"
               value={formData.nombre}
               onChange={handleChange}
-              placeholder="Ingresa tu nombre"
+              placeholder="Ingresá tu nombre"
               required
             />
           </div>
@@ -132,7 +132,7 @@ export default function Form() {
               name="apellido"
               value={formData.apellido}
               onChange={handleChange}
-              placeholder="Ingresa tu apellido"
+              placeholder="Ingresá tu apellido"
               required
             />
           </div>
@@ -229,22 +229,22 @@ export default function Form() {
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
-                name="lineaDeTiempo"
-                checked={formData.opciones.lineaDeTiempo}
+                name="histrograma"
+                checked={formData.opciones.histograma}
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Línea de tiempo
+              Histograma
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
-                name="videoclip"
-                checked={formData.opciones.videoclip}
+                name="clipDeVida"
+                checked={formData.opciones.clipDeVida}
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Videoclip
+              Clip de Vida
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
@@ -342,22 +342,22 @@ export default function Form() {
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
-                name="lineaDeTiempo"
-                checked={formData.opciones.lineaDeTiempo}
+                name="histograma"
+                checked={formData.opciones.histograma}
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Línea de tiempo
+              Histograma
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
                 type="checkbox"
-                name="videoclip"
-                checked={formData.opciones.videoclip}
+                name="clipDeVida"
+                checked={formData.opciones.clipDeVida}
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Videoclip
+              Clip de Vida
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input

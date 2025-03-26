@@ -96,7 +96,7 @@ const CarouselWrapper = () => {
             <Card
               title="RESUMEN BIOGRÁFICO"
               imgSrc={bio1A}
-              h1="¡El Pergamino de vida!"
+              h1="¡El pergamino de vida!"
               description="Recorré, describí y sintetizá la trayectoria, expresando el significado que tuvo para que nuevas y futuras generaciones tengan algo valioso guardado para siempre."
             />
           </div>
