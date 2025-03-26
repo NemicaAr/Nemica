@@ -6,6 +6,7 @@ const Carousel2D = ({ bgDesktopIcon, bgMobileIcon, icons, titles }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
+    mode: "free",
     drag: true,
     slides: {
       perView: 2,
