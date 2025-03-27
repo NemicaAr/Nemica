@@ -78,7 +78,7 @@ const CarouselWrapper = () => {
   };
 
   return (
-    <div className="wrapper overflow-x-hidden">
+    <div className="wrapper overflow-x-visible">
       <div className="scene">
         {/* Para escritorio: se detiene al pasar el mouse sobre el carrusel */}
         <div

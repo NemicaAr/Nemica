@@ -244,7 +244,7 @@ export default function Form() {
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Clip de Vida
+              Clip de vida
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input
@@ -357,7 +357,7 @@ export default function Form() {
                 onChange={handleChange}
                 className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
               />
-              Clip de Vida
+              Clip de vida
             </label>
             <label className="flex items-center gap-3 text-purpura lg:py-2">
               <input

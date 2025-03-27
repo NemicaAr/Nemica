@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 
-
 export default function Card({ title, imgSrc, description, h1 }) {
   return (
-    <div className="flex flex-col w-[300px] h-[500px] bg-gray-100 rounded-b-sm shadow-lg overflow-hidden border-2 border-white ">
-      <div className="relative h-[250px]">
+    <div className="flex flex-col w-[300px] h-[500px] bg-gray-100 rounded-b-sm shadow-lg overflow-hidden border-2 border-white transition-transform duration-300 hover:scale-110">
+      <div className="relative h-[250px] overflow-hidden">
         <img
           src={imgSrc}
           alt="Imagen"
@@ -14,7 +13,6 @@ export default function Card({ title, imgSrc, description, h1 }) {
           <h2 className="text-xl font-bold text-white text-center">{title}</h2>
         </div>
       </div>
-
 
       {/* Contenedor de h1 y description */}
       <section className="bg-gray-100 p-4 flex flex-col">
@@ -28,7 +26,6 @@ export default function Card({ title, imgSrc, description, h1 }) {
     </div>
   );
 }
-
 
 Card.propTypes = {
   imgSrc: PropTypes.string.isRequired,
