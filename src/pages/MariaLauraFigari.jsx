@@ -2,7 +2,7 @@ import ConmemorativeSection from "../components/ConmemorativeSection";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import lauraImg from "../assets/images/Laura.png";
-import velaImg from "../assets/images/Laura2.png";
+import velaImg from "../assets/images/laura2.png";
 import logo from "../assets/images/icons/logo.png";
 import titulonemica from "../assets/images/icons/titulonemica.png";
 
