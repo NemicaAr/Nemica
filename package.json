@@ -19,6 +19,8 @@
     "keen-slider": "^6.8.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.6.3",
+    "react-router-dom": "^7.6.3",
     "tailwindcss": "^4.0.6"
   },
   "devDependencies": {
