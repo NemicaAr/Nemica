@@ -23,7 +23,7 @@ const NavBar = ({ imgSrc, title }) => {
   };
 
   return (
-    <nav className="bg-gris text-gray-200 p-4 fixed top-0 left-0 right-0 w-full z-50">
+    <nav className="bg-gris text-gray-200 p-4 fixed top-0 left-0 right-0 w-full z-[1000]">
       {/* 🔹 Vista Desktop */}
       <div className="hidden lg:flex items-center justify-between">
         {/* Logo a la izquierda con navegación */}
