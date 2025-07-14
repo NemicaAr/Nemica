@@ -70,7 +70,7 @@ Ahora descansá en las manos de Jesús.`;
   return (
     <div className="bg-gris min-h-screen flex flex-col">
       <NavBar  imgSrc={logo} title={titulonemica}  />
-      <main className="flex-grow">
+      <main className="flex-grow pt-20">
         <ConmemorativeSection
           h1="María Laura Figari"
           birthDate="18/12/1947"

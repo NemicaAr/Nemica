@@ -81,7 +81,7 @@ export default function App() {
         </section>
       </div>
 
-      <div className="relative w-full overflow-hidden">
+      <div className="pt-20 relative w-full overflow-hidden">
         <HeadingImage
           imgSrcMobile={principal1mobile}
           videoSrc={video}
