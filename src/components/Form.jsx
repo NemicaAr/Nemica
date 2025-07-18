@@ -18,6 +18,7 @@ export default function Form() {
       sintesisGenetica: false,
       pasiones: false,
       todos: false,
+      qr: false,
     },
   });
 
@@ -58,6 +59,7 @@ export default function Form() {
       sintesisGenetica: formData.opciones.sintesisGenetica ? "Sí" : "No",
       pasiones: formData.opciones.pasiones ? "si" : "no",
       todos: formData.opciones.todos ? "Sí" : "No",
+      Qr: formData.opciones.qr ? "Sí" : "No",
     };
 
     // Envía el correo utilizando EmailJS
@@ -88,6 +90,7 @@ export default function Form() {
               sintesisGenetica: false,
               pasiones: false,
               todos: false,
+              qr: false,
             },
           });
         },
@@ -106,7 +109,10 @@ export default function Form() {
         {/* Nuevo grid para los inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 lg:text-2xl">
           <div className="w-full">
-            <label htmlFor="nombre" className="block text-sm font-medium text-left">
+            <label
+              htmlFor="nombre"
+              className="block text-sm font-medium text-left"
+            >
               Nombre
             </label>
             <input
@@ -122,7 +128,10 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label htmlFor="apellido" className="block text-sm font-medium text-left">
+            <label
+              htmlFor="apellido"
+              className="block text-sm font-medium text-left"
+            >
               Apellido
             </label>
             <input
@@ -138,7 +147,10 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label htmlFor="email" className="block text-sm font-medium text-left">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-left"
+            >
               Email
             </label>
             <input
@@ -154,7 +166,10 @@ export default function Form() {
           </div>
 
           <div className="w-full">
-            <label htmlFor="telefono" className="block text-sm font-medium text-left">
+            <label
+              htmlFor="telefono"
+              className="block text-sm font-medium text-left"
+            >
               Teléfono celular
             </label>
             <input
@@ -276,6 +291,16 @@ export default function Form() {
               />
               Pasiones
             </label>
+            <label className="flex items-center gap-3 text-purpura lg:py-2">
+              <input
+                type="checkbox"
+                name="qr"
+                checked={formData.opciones.qr}
+                onChange={handleChange}
+                className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+              />
+              Qr
+            </label>
           </div>
         </div>
 
@@ -389,6 +414,16 @@ export default function Form() {
               />
               Pasiones
             </label>
+                      <label className="flex items-center gap-3 text-purpura lg:py-2">
+            <input
+              type="checkbox"
+              name="qr"
+              checked={formData.opciones.qr}
+              onChange={handleChange}
+              className="w-5 h-5 text-purple-600 bg-white border-2 border-purple-500 rounded focus:ring-2 focus:ring-purple-400 accent-purpura"
+            />
+            Qr
+          </label>
           </div>
         </div>
 
